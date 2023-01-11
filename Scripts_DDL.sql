@@ -1,4 +1,4 @@
--- DROP TABLE (1a)
+-- DROP TABLE
 DROP TABLE TB_ESTADO CASCADE CONSTRAINTS;
 DROP TABLE TB_CIDADE CASCADE CONSTRAINTS;
 DROP TABLE TB_ANIMAL;
@@ -256,7 +256,7 @@ ADD CONSTRAINT itens_venda_prod_fk FOREIGN KEY (id_produto) REFERENCES TB_PRODUT
 ALTER TABLE TB_ITENS_VENDA
 ADD CONSTRAINT itens_venda_vendedor_fk FOREIGN KEY (id_vendedor) REFERENCES TB_VENDEDOR(id_vendedor);
 
--- INDÕCES (1d i)
+-- IND√çCES 
 CREATE INDEX nm_cliente_idx ON TB_CLIENTE(nm_cliente); 
 CREATE INDEX qtd_estoque_idx ON TB_ESTOQUE_PRODUTO(qtd_estoque); 
 CREATE INDEX cnpj_cliente_idx ON TB_CLIENTE_PJ(cnpj); 
@@ -268,14 +268,14 @@ CREATE INDEX nm_fornecedor_idx ON TB_FORNECEDOR(nm_fornecedor);
 CREATE INDEX nm_cidade_idx ON TB_CIDADE(nm_cidade); 
 CREATE INDEX nm_estado_idx ON TB_ESTADO(nm_estado); 
 
--- INDÕCES (1d ii)
+-- IND√çCES 
 CREATE INDEX inform_vendedor_idx ON TB_VENDEDOR(nm_vendedor, dt_admissao, dt_demissao); 
 CREATE INDEX inform_loja_idx ON TB_LOJA(nm_loja, nr_telefone); 
 
--- INDÕCES (1d iii)
+-- IND√çCES 
 CREATE INDEX contato_cliente_idx ON TB_CLIENTE(nm_cliente, email); 
 
 
--- ALTER TABLE (1e)
+-- ALTER TABLE 
 ALTER TABLE TB_CLIENTE ADD comentario VARCHAR2(500);
 ALTER TABLE TB_CLIENTE MODIFY comentario VARCHAR2(800);
